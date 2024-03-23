@@ -1,3 +1,4 @@
+import { themes } from "./src/config/theme";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -15,6 +16,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwindcss-themer")(themes),
+  ],
 };
 export default config;
