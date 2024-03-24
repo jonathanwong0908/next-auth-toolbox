@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { instrumentSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: "Wefs - Website References",
+  title: "Next Auth Toolbox",
 };
 
 export default function RootLayout({

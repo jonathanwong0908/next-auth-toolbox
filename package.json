@@ -6,12 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:studio": "npx drizzle-kit studio",
+    "db:push": "npx drizzle-kit push:pg",
+    "db:reset": "tsx ./src/db/reset.ts"
   },
   "dependencies": {
+    "@auth/drizzle-adapter": "^0.8.0",
     "@clerk/nextjs": "^4.29.9",
+    "@hookform/resolvers": "^3.3.4",
     "@neondatabase/serverless": "^0.9.0",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@types/uuid": "^9.0.8",
+    "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dotenv": "^16.4.5",
@@ -19,16 +27,24 @@
     "framer-motion": "^11.0.20",
     "lucide-react": "^0.363.0",
     "next": "14.1.4",
+    "next-auth": "^5.0.0-beta.15",
     "next-themes": "^0.3.0",
+    "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.2.2"
+    "react-hook-form": "^7.51.1",
+    "react-icons": "^5.0.1",
+    "tailwind-merge": "^2.2.2",
+    "uuid": "^9.0.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "drizzle-kit": "^0.20.14",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
@@ -36,7 +52,6 @@
     "prettier-plugin-tailwindcss": "^0.5.12",
     "tailwindcss": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-themer": "^4.0.0",
-    "typescript": "^5"
+    "tailwindcss-themer": "^4.0.0"
   }
 }
