@@ -3,10 +3,9 @@
 import { SignUpFormSchemaType } from "@/components/auth/signup-form";
 import db from "@/db";
 import { users } from "@/db/schema";
-import { SignUpSchema } from "@/form-schemas";
+import { SignUpSchema } from "@/lib/form-schemas";
 import userService from "@/lib/services/user";
-import bcrypt from "bcrypt";
-import { eq } from "drizzle-orm";
+import { genSaltSync, hashSync } from "bcrypt-ts";
 
 export const signup = async (values: SignUpFormSchemaType) => {
   const validatedFields = SignUpSchema.safeParse(values);
@@ -17,7 +16,8 @@ export const signup = async (values: SignUpFormSchemaType) => {
 
   const { email, password, name } = validatedFields?.data;
 
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const salt = genSaltSync(10);
+  const hashedPassword = hashSync(password, salt);
 
   const existingUser = await userService?.getUserByEmail(email);
 

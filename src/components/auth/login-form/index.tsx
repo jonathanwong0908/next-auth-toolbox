@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import FormError from "@/components/form/form-error";
 import FormSuccess from "@/components/form/form-success";
 import { login } from "@/actions/login";
-import { LoginSchema } from "@/form-schemas";
+import { LoginSchema } from "@/lib/form-schemas";
 
 export type LoginFormSchemaType = z.infer<typeof LoginSchema>;
 

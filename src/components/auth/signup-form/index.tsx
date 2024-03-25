@@ -1,6 +1,6 @@
 "use client";
 
-import { SignUpSchema } from "@/form-schemas";
+import { SignUpSchema } from "@/lib/form-schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";

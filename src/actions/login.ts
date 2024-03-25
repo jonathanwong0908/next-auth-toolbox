@@ -1,7 +1,7 @@
 "use server";
 
 import { LoginFormSchemaType } from "@/components/auth/login-form";
-import { LoginSchema } from "@/form-schemas";
+import { LoginSchema } from "@/lib/form-schemas";
 
 export const login = async (values: LoginFormSchemaType) => {
   const validatedFields = LoginSchema.safeParse(values);
