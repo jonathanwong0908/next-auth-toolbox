@@ -8,9 +8,8 @@ interface Props extends ComponentPropsWithoutRef<"span"> {
 }
 
 const LoginButton = ({ children, mode, asChild }: Props) => {
-  const onClick = () => {
-    console.log("clicked");
-  };
+  const onClick = () => {};
+
   return (
     <span onClick={onClick} className="cursor-pointer">
       {children}

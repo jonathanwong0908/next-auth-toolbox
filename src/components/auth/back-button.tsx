@@ -11,9 +11,11 @@ interface Props {
 
 const BackButton = ({ href, label }: Props) => {
   return (
-    <Button variant="link" className="font-normal w-full" size="sm" asChild>
-      <Link href={href}>{label}</Link>
-    </Button>
+    <div className="grid w-full place-items-center">
+      <Link href={href} className="text-sm underline underline-offset-4">
+        {label}
+      </Link>
+    </div>
   );
 };
 

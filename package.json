@@ -51,6 +51,7 @@
     "prettier-plugin-tailwindcss": "^0.5.12",
     "tailwindcss": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-themer": "^4.0.0"
+    "tailwindcss-themer": "^4.0.0",
+    "tsx": "^4.7.1"
   }
 }
