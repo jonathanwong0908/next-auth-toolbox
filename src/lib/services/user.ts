@@ -11,7 +11,7 @@ const userService = {
       return null;
     }
   },
-  getUserById: async (id: number) => {
+  getUserById: async (id: string) => {
     try {
       const user = await db.select().from(users).where(eq(users.id, id));
       return user[0];

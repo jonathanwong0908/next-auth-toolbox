@@ -14,7 +14,7 @@ import type { AdapterAccount } from "@auth/core/adapters";
 export const userRoleEnum = pgEnum("user_role", ["USER", "ADMIN"]);
 
 export const users = pgTable("user", {
-  id: serial("id").primaryKey(),
+  id: text("id").notNull().primaryKey(),
   name: text("name"),
   email: text("email").unique(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
@@ -26,7 +26,7 @@ export const users = pgTable("user", {
 export const accounts = pgTable(
   "account",
   {
-    userId: integer("userId")
+    userId: text("userId")
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     type: text("type").$type<AdapterAccount["type"]>().notNull(),

@@ -6,6 +6,7 @@ import { users } from "@/db/schema";
 import { SignUpSchema } from "@/lib/form-schemas";
 import userService from "@/lib/services/user";
 import { genSaltSync, hashSync } from "bcrypt-ts";
+import { v4 as uuidv4 } from "uuid";
 
 export const signup = async (values: SignUpFormSchemaType) => {
   const validatedFields = SignUpSchema.safeParse(values);
@@ -25,7 +26,9 @@ export const signup = async (values: SignUpFormSchemaType) => {
     return { error: "Email already exists" };
   }
 
-  await db.insert(users).values({ email, password: hashedPassword, name });
+  await db
+    .insert(users)
+    .values({ id: uuidv4(), email, password: hashedPassword, name });
 
   return { success: "User created!" };
 };
